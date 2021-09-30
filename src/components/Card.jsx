@@ -22,7 +22,6 @@ const Card = (props) => {
   const submitHandler = (e) => {
     e.preventDefault();
     setShow(true);
-    
     props.search(inputRef.current.value);
   };
 ;    
@@ -70,7 +69,7 @@ const Card = (props) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    filteredData: state.filteredData,
+    filteredData: state.filteredData
   };
 };
 export default connect(mapStateToProps, { search })(Card);

@@ -2,20 +2,19 @@ import { useState } from "react";
 import { connect } from "react-redux";
 import { Container, Wrapper, Top, Bottom, Line } from "./PaginationStyle";
 import "./paginationStyle.css";
+import { sorting } from "../actions/action";
+
 
 const Pagination = (props) => {
   const data= props.filteredData
- console.log(data)
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
-  const hide = () => setIsOpen(false);
-  const show = () => setIsOpen(true);
-
+ 
   const orderList = [
-    { text: '↑ Name ascending', click:""},
-    { text: '↓ Name descending', click:"" },
-    { text: '↑ Year ascending', click:"" },
-    { text: '↓ Year descending', click:"" },
+    { text: '↑ Name ascending', click:"name_asc"},
+    { text: '↓ Name descending', click:"name_desc" },
+    { text: '↑ Year ascending', click:"year_asc" },
+    { text: "↓ Year descending", click:"year_desc" },
   ];
  
   const dataLimit = 6; //her sayfada 6 veri
@@ -25,6 +24,9 @@ const Pagination = (props) => {
   ); //Gelen veriye göre oluşacak sayfa sayısı
   const [currentPage, setCurrentPage] = useState(1);
   
+  function goToNextPage() {
+    setCurrentPage((page) => page + 1);
+  }
   function goToPreviousPage() {
     setCurrentPage((page) => page - 1);
   }
@@ -48,10 +50,10 @@ const Pagination = (props) => {
       <button className="button" onClick={toggle}>
       ⇅ Order By
       </button>
-      {isOpen && <ul className="menu-links">
-        {orderList.map(nav => (
-          <li key={orderList.text} onClick={orderList.click}>
-              {orderList.text}
+      {isOpen && <ul className="menu-links" onClick={toggle}>
+        {orderList.map(item => (
+          <li key={item.text} onClick={()=>props.sorting(item.click)}>
+              {item.text}
           </li>
         ))}
       </ul>}
@@ -105,4 +107,4 @@ const mapStateToProps = (state) => {
     filteredData: state.filteredData,
   };
 };
-export default connect(mapStateToProps)(Pagination);
+export default connect(mapStateToProps,{sorting})(Pagination);

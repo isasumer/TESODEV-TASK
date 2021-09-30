@@ -4,9 +4,10 @@ export const search = (searchedWord) => {
       payload: searchedWord
     };
   };    
-export const sorting = (searchedWord) => {
+export const sorting = (sortType) => {
+  console.log(sortType)
     return {
-      type: "SORTING_ACTION",
-      payload: searchedWord
+      type: "SORT_ACTION",
+      payload: sortType
     };
   };    
