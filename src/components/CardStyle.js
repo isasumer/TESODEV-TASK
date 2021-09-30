@@ -1,21 +1,19 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-height: 300px;
+  height: 300px;
   width: 709px;
   margin: 20px 0 0 -150px;
-border:1px solid black;
 `;
 export const CardItem = styled.div`
   max-height: 250px;
   width: 709px;
   overflow: hidden;
-  margin-bottom:20px;
-
+  margin-bottom: 20px;
 `;
 export const Wrapper = styled.div`
-height: 80px;
-width: 709px;
+  height: 80px;
+  width: 709px;
 `;
 export const Top = styled.div`
   height: 31px;
@@ -49,11 +47,13 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   margin-top: 30px;
+  width:100%;
 `;
 export const Input = styled.input`
   height: 46px;
-  width: 709px;
+  width: 644px;
   border-radius: 8px;
+  /* margin-left: 160px; */
 `;
 export const Button = styled.button`
   height: 46px;
@@ -72,6 +72,6 @@ export const ShowMore = styled.div`
   font-size: 12px;
   line-height: 14px;
   color: #000000;
-  margin:auto;
-  cursor:pointer;
+  margin: auto;
+  cursor: pointer;
 `;

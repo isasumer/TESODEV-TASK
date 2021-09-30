@@ -1,5 +1,6 @@
 import Card from "../components/Card";
 import styled from "styled-components";
+import Result from "./Result";
 
 const Container = styled.div`
 margin-top:10vh;
@@ -7,7 +8,6 @@ margin-top:10vh;
   height: 89vh;
   align-items: center;
   flex-direction: column;
-  border: 1px solid red;
 `;
 const Logo = styled.img`
   width: 278px;
@@ -24,7 +24,7 @@ const  Home= ()=> {
     <Container>
       <Logo src="https://raw.githubusercontent.com/tesodev/jqueryLite/master/docs/img/tesodevVector.png" />
       <Title>Search Web App</Title>
-      <Card />
+      <Card/>
     </Container>
   );
 }

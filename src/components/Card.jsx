@@ -1,4 +1,4 @@
-import { useRef, useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { search } from "../actions/action";
@@ -16,33 +16,30 @@ import {
 } from "./CardStyle";
 
 const Card = (props) => {
-  const [data, setFilteredData] = useState(props.data);
   const [show, setShow] = useState(false);
   const inputRef = useRef();
 
   const submitHandler = (e) => {
     e.preventDefault();
     setShow(true);
-    const newList = props.data.filter((val) => {
-      if (val[0].toLowerCase().includes(inputRef.current.value.toLowerCase())) {
-        return val;
-      }
-    });
-
-    setFilteredData(newList);
-    props.search(newList)
+    
+    props.search(inputRef.current.value);
   };
-
+;    
   return (
     <>
       <Form onSubmit={submitHandler}>
-        <Input type="text" ref={inputRef} />
+        <Input
+          type="text"
+          ref={inputRef}
+          placeholder="Please enter name or surname"
+        />
         <Button type="submit">Search</Button>
       </Form>
       {show && (
         <Container>
           <CardItem>
-            {data.map((item, index) => {
+            {props.filteredData?.map((item) => {
               return (
                 <Wrapper key={item[2]}>
                   <Top>
@@ -60,21 +57,20 @@ const Card = (props) => {
               );
             })}
           </CardItem>
-          
+          {props.filteredData?.length > 3 && (
             <Link to="result">
-              <ShowMore>Show more...</ShowMore>
+              <ShowMore >Show more...</ShowMore>
             </Link>
-        
+          )}
         </Container>
       )}
     </>
   );
 };
 
-const mapStateToProps = (state) => {
+const mapStateToProps = (state, props) => {
   return {
-    data: state.data,
+    filteredData: state.filteredData,
   };
 };
-
-export default connect(mapStateToProps,{search})(Card);
+export default connect(mapStateToProps, { search })(Card);

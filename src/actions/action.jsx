@@ -1,7 +1,12 @@
-export const search = (item) => {
-  console.log(item)
+export const search = (searchedWord) => {
     return {
-      type: "SEARCH",
-      payload: item
+      type: "SEARCH_ACTION",
+      payload: searchedWord
+    };
+  };    
+export const sorting = (searchedWord) => {
+    return {
+      type: "SORTING_ACTION",
+      payload: searchedWord
     };
   };    
