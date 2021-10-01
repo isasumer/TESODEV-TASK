@@ -71,6 +71,7 @@ const Pagination = (props) => {
           <div className="line"></div>
         </div>
       ))}
+      <div style={{marginTop:"5px"}}>Results Number: {props.filteredData.length }</div>
       <div className="pagination">
         <button
           onClick={goToPreviousPage}
