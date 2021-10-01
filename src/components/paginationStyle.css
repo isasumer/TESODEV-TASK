@@ -1,3 +1,36 @@
+.container {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+.top {
+  height: 31px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 30px 5px;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+}
+.bottom {
+  align-items: center;
+  padding: 0px 30px;
+  height: 26px;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  color: #686868;
+}
+.line {
+  width: 644px;
+  height: 0px;
+  border: 1px solid #585858;
+  transform: matrix(1, 0, 0, 1, 0, 0);
+  margin: auto;
+}
+
 .order {
   width: 90%;
   position: relative;
@@ -25,7 +58,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  color:black;
+  color: black;
+}
+.menu-links li {
+  cursor: pointer;
 }
 
 .pagination {
@@ -77,4 +113,9 @@
   pointer-events: none;
   box-shadow: none;
   color: #999;
+}
+.wrapper:hover {
+    cursor: pointer;
+    background: #c4c4c4;
+    border-radius: 3%;
 }

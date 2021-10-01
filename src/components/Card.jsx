@@ -1,4 +1,4 @@
-import { useRef, useState, useEffect } from "react";
+import { useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { search } from "../actions/action";
@@ -24,7 +24,7 @@ const Card = (props) => {
     setShow(true);
     props.search(inputRef.current.value);
   };
-;    
+
   return (
     <>
       <Form onSubmit={submitHandler}>
@@ -40,16 +40,16 @@ const Card = (props) => {
           <CardItem>
             {props.filteredData?.map((item) => {
               return (
-                <Wrapper key={item[2]}>
+                <Wrapper key={item.email}>
                   <Top>
                     <span>
-                      {item[4]} - {item[5]}
+                      {item.country} - {item.city}
                     </span>
-                    <span>{item[2]}</span>
+                    <span>{item.email}</span>
                   </Top>
                   <Bottom>
-                    <span>{item[0]}</span>
-                    <span> - {item[3]}</span>
+                    <span>{item.name}</span>
+                    <span> - {item.year}</span>
                   </Bottom>
                   <Line></Line>
                 </Wrapper>
@@ -58,7 +58,7 @@ const Card = (props) => {
           </CardItem>
           {props.filteredData?.length > 3 && (
             <Link to="result">
-              <ShowMore >Show more...</ShowMore>
+              <ShowMore>Show more...</ShowMore>
             </Link>
           )}
         </Container>
@@ -69,7 +69,7 @@ const Card = (props) => {
 
 const mapStateToProps = (state, props) => {
   return {
-    filteredData: state.filteredData
+    filteredData: state.filteredData,
   };
 };
 export default connect(mapStateToProps, { search })(Card);

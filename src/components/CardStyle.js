@@ -14,6 +14,11 @@ export const CardItem = styled.div`
 export const Wrapper = styled.div`
   height: 80px;
   width: 709px;
+  :hover {
+    cursor: pointer;
+    background: #c4c4c4;
+    border-radius: 3%;
+  }
 `;
 export const Top = styled.div`
   height: 31px;
@@ -47,13 +52,15 @@ export const Form = styled.form`
   justify-content: center;
   align-items: center;
   margin-top: 30px;
-  width:100%;
+  width: 100%;
 `;
 export const Input = styled.input`
   height: 46px;
   width: 644px;
   border-radius: 8px;
-  /* margin-left: 160px; */
+  :hover {
+    background: rgba(100, 100, 100, 0.08);
+  }
 `;
 export const Button = styled.button`
   height: 46px;
@@ -62,6 +69,9 @@ export const Button = styled.button`
   background: #204080;
   color: white;
   margin-left: 10px;
+  :hover {
+    background: #4f75c2;
+  }
 `;
 
 export const ShowMore = styled.div`

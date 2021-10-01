@@ -22,6 +22,8 @@ export const Input = styled.input`
   box-sizing: border-box;
   border-radius: 8px;
   margin-right: 30px;
+  :hover {
+    background: rgba(100, 100, 100, 0.08)};
 `;
 export const Button = styled.button`
   height: 46px;
@@ -29,6 +31,9 @@ export const Button = styled.button`
   border-radius: 8px;
   background: #204080;
   color: white;
+  :hover {
+    background: #4f75c2;
+  }
 `;
 
 export const Logo = styled.img`

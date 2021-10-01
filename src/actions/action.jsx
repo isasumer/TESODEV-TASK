@@ -5,9 +5,8 @@ export const search = (searchedWord) => {
     };
   };    
 export const sorting = (sortType) => {
-  console.log(sortType)
     return {
       type: "SORT_ACTION",
       payload: sortType
     };
-  };    
+  }; 
