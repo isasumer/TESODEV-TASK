@@ -1,6 +1,5 @@
 import ReactDOM from "react-dom";
 import App from "./App";
-// import reportWebVitals from "./reportWebVitals";
 import { createStore } from "redux";
 import reducer from "./reducers/reducer";
 import { Provider } from "react-redux";
@@ -12,4 +11,3 @@ ReactDOM.render(
     </Provider>,
   document.getElementById("root")
 );
-// reportWebVitals();

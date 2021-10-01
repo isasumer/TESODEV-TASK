@@ -55,9 +55,10 @@ export const Form = styled.form`
   width: 100%;
 `;
 export const Input = styled.input`
-  height: 46px;
+  height: 50px;
   width: 644px;
   border-radius: 8px;
+  font-size: 26px;
   :hover {
     background: rgba(100, 100, 100, 0.08);
   }
@@ -75,13 +76,9 @@ export const Button = styled.button`
 `;
 
 export const ShowMore = styled.div`
-  width: 79px;
-  height: 17px;
-  font-style: normal;
+  width: 100px;
   font-weight: bold;
-  font-size: 12px;
-  line-height: 14px;
-  color: #000000;
+  font-size: 18px;
   margin: auto;
   cursor: pointer;
 `;

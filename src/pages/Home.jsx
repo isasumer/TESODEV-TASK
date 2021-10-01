@@ -1,9 +1,8 @@
 import Card from "../components/Card";
 import styled from "styled-components";
-import Result from "./Result";
 
 const Container = styled.div`
-margin-top:10vh;
+  margin-top: 10vh;
   display: flex;
   height: 89vh;
   align-items: center;
@@ -19,14 +18,13 @@ const Title = styled.div`
   padding-left: 250px;
 `;
 
-const  Home= ()=> {
+const Home = () => {
   return (
     <Container>
       <Logo src="https://raw.githubusercontent.com/tesodev/jqueryLite/master/docs/img/tesodevVector.png" />
       <Title>Search Web App</Title>
-      <Card/>
+      <Card/>  {/*verileri burada map ledikten sonra dağıtıyoruz*/}
     </Container>
   );
-}
-
+};
 export default Home;

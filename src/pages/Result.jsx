@@ -1,13 +1,12 @@
-import { useRef} from "react";
+import { useRef } from "react";
 import { Container, Form, Input, Button, Logo } from "./ResultStyle";
 import { Link } from "react-router-dom";
-import Pagination from "../components/Pagination"
+import Pagination from "../components/Pagination";
 import { search } from "../actions/action";
 import { connect } from "react-redux";
 
 const Result = (props) => {
   const inputRef = useRef();
-
   const submitHandler = (e) => {
     e.preventDefault();
 
@@ -19,9 +18,11 @@ const Result = (props) => {
         <Link to="/">
           <Logo src="https://raw.githubusercontent.com/tesodev/jqueryLite/master/docs/img/tesodevVector.png" />
         </Link>
-        <Input type="text"
+        <Input
+          type="text"
           ref={inputRef}
-          placeholder="Please enter name or surname" />
+          placeholder="Please enter name or surname"
+        />
         <Button type="submit">Search</Button>
       </Form>
       <Pagination />
@@ -29,7 +30,6 @@ const Result = (props) => {
   );
 };
 const mapStateToProps = (props) => {
-  return {
-  };
+  return {};
 };
 export default connect(mapStateToProps, { search })(Result);
