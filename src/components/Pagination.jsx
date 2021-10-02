@@ -4,7 +4,6 @@ import { sorting } from "../actions/action";
 import "./paginationStyle.css";
 
 const Pagination = (props) => {
-  
   const [isOpen, setIsOpen] = useState(false);
   const toggle = () => setIsOpen(!isOpen);
 
@@ -49,7 +48,11 @@ const Pagination = (props) => {
         {isOpen && (
           <ul className="menu-links" onClick={toggle}>
             {orderList.map((item) => (
-              <li className="link" key={item.text} onClick={() => props.sorting(item.click)}>
+              <li
+                className="link"
+                key={item.text}
+                onClick={() => props.sorting(item.click)}
+              >
                 {item.text}
               </li>
             ))}
@@ -71,7 +74,9 @@ const Pagination = (props) => {
           <div className="line"></div>
         </div>
       ))}
-      <div style={{marginTop:"5px"}}>Number of results:{props.filteredData.length }</div>
+      <div style={{ marginTop: "5px" }}>
+        Number of results:{props.filteredData.length}
+      </div>
       <div className="pagination">
         <button
           onClick={goToPreviousPage}

@@ -56,7 +56,9 @@ const Card = (props) => {
               );
             })}
           </CardItem>
-          <div style={{margin:"5px 0 0 40px"}}>Number of results: {props.filteredData.length }</div>
+          <div style={{ margin: "5px 0 0 40px" }}>
+            Number of results: {props.filteredData.length}
+          </div>
           {props.filteredData?.length > 3 && (
             <Link to="result">
               <ShowMore>Show more...</ShowMore>
